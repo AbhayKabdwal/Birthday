@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Down to Your Special Day, My Love!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-grad-blue: #667eea;
+            --bg-grad-pink: #764ba2;
+            --text-color: #1f2937;
+            --accent-pink: #e5398d;
+            --accent-glow: rgba(255, 255, 255, 0.8);
+            --container-bg: rgba(255, 255, 255, 0.25);
+            --container-border: rgba(255, 255, 255, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-grad-blue) 0%, var(--bg-grad-pink) 100%);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- Scrolling Stardust Animation --- */
+        .stars, .twinkling {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+        .stars {
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            background-repeat: repeat;
+            background-position: top center;
+            z-index: -2;
+        }
+        .twinkling {
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            background-repeat: repeat;
+            background-position: top center;
+            z-index: -1;
+            animation: move-twink-back 200s linear infinite;
+        }
+        @keyframes move-twink-back {
+            from {background-position:0 0;}
+            to {background-position:-10000px 5000px;}
+        }
+
+        .container {
+            background: var(--container-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid var(--container-border);
+            z-index: 1;
+        }
+
+        .header {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+        }
+
+        .countdown-overview {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .countdown-overview span {
+            font-weight: 700;
+            color: var(--accent-pink);
+            text-shadow: 0 0 8px rgba(229, 57, 141, 0.5);
+        }
+
+        .countdown-clock {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-clock span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 10px;
+            min-width: 120px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* --- Timeline Layout for Days --- */
+        .timeline {
+            list-style: none;
+            padding: 20px 0;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            /* MODIFIED: Shorten the line to stop before the last item */
+            height: calc(100% - 80px);
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 10px; /* Add some space between items */
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            border: 3px solid var(--accent-pink);
+            z-index: 1;
+        }
+        
+        /* ADDED: Hide the dot for the very last item */
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -8.5px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -6.5px;
+        }
+
+        .timeline-item a {
+            display: inline-block;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .timeline-item a:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .loading-item {
+            display: inline-block;
+            padding: 20px;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 15px;
+            }
+            .timeline-item, .timeline-item:nth-child(even), .timeline-item:nth-child(odd) {
+                width: 100%;
+                left: 0;
+                padding-left: 50px;
+                padding-right: 15px;
+                text-align: left;
+            }
+            .timeline-item:nth-child(odd)::after, .timeline-item:nth-child(even)::after {
+                left: 7px;
+            }
+
+            .header { font-size: 3rem; }
+            .countdown-overview { font-size: 1.2rem; }
+            .countdown-clock { font-size: 1rem; }
+            .container { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <div class="container">
+        <h1 class="header">Counting Down to Your Special Day, My Love!</h1>
+        <p class="countdown-overview" id="countdownOverview"></p>
+        <div class="countdown-clock" id="countdownClock">
+            </div>
+        <p style="font-size: 1.1rem; color: #333; margin-top: 30px; margin-bottom: 20px;">Our journey to your birthday begins...</p>
+        <ul class="timeline" id="dayList">
+            </ul>
+    </div>
+
+    <script>
+        // --- IMPORTANT ---
+        // Set your girlfriend's birthday here (Year, Month (0-11), Day)
+        const birthdayDate = new Date(2025, 6, 29, 0, 0, 0); // July 29, 2025
+        // --- END OF SETTINGS ---
+
+        const totalCountdownDays = 10;
+        const dayList = document.getElementById('dayList');
+        const countdownOverview = document.getElementById('countdownOverview');
+        const countdownClock = document.getElementById('countdownClock');
+
+        function updateOverviewCountdown() {
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const bday = new Date(birthdayDate.getFullYear(), birthdayDate.getMonth(), birthdayDate.getDate());
+            const diffTime = bday.getTime() - today.getTime();
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            if (diffDays > 0) {
+                countdownOverview.innerHTML = `Only <span>${diffDays} magical day${diffDays !== 1 ? 's' : ''}</span> left until we celebrate you!`;
+            } else if (diffDays === 0) {
+                countdownOverview.innerHTML = `My love, <span>today is your special day!</span> Happy Birthday!`;
+            } else {
+                countdownOverview.innerHTML = `We celebrated your wonderful day <span>${Math.abs(diffDays)} day${Math.abs(diffDays) !== 1 ? 's' : ''}</span> ago!`;
+            }
+        }
+
+        function updateCountdownClock() {
+            const now = new Date().getTime();
+            const distance = birthdayDate.getTime() - now;
+
+            if (distance < 0) {
+                countdownClock.innerHTML = "<span>🎉 Happy Birthday, My Love! 🎉</span>";
+                clearInterval(countdownInterval); 
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownClock.innerHTML = `
+                <span>${days}<br>Days</span>
+                <span>${hours}<br>Hours</span>
+                <span>${minutes}<br>Mins</span>
+                <span>${seconds}<br>Secs</span>
+            `;
+        }
+
+        // Generate list items for each day
+        for (let i = totalCountdownDays; i >= 1; i--) {
+            const listItem = document.createElement('li');
+            listItem.classList.add('timeline-item');
+            const link = document.createElement('a');
+            link.href = `day${i}.html`;
+            link.textContent = `Day ${i}`;
+            listItem.appendChild(link);
+            dayList.appendChild(listItem);
+        }
+
+        // --- Create and append the "Birthday Loading" item ---
+        const loadingItem = document.createElement('li');
+        loadingItem.classList.add('timeline-item');
+
+        const loadingSpan = document.createElement('span');
+        loadingSpan.textContent = 'Birthday Loading...';
+        loadingSpan.classList.add('loading-item');
+
+        loadingItem.appendChild(loadingSpan);
+        dayList.appendChild(loadingItem);
+
+        // Initial setup
+        updateOverviewCountdown();
+        updateCountdownClock();
+
+        const countdownInterval = setInterval(updateCountdownClock, 1000);
+    </script>
+</body>
+</html>

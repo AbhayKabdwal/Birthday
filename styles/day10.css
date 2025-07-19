@@ -1,0 +1,160 @@
+/* --- Dreamy Pastel Sky Theme --- */
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); /* Pastel pink to blue gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent frosted glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 30px; /* Soft, rounded corners */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+    padding: 35px;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header {
+    font-family: 'Great Vibes', cursive; /* Beautiful, flowing script */
+    font-size: 4rem;
+    font-weight: 400;
+    color: #3b4369; /* Deep, soft indigo */
+    margin-bottom: 20px;
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.8);
+}
+
+.countdown-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #6b77a8; /* Muted blue */
+    margin-bottom: 25px;
+}
+
+.day-content {
+    background-color: rgba(255, 255, 255, 0.5); /* Lighter inner box */
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 35px;
+}
+
+.day-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #596594; /* Slightly lighter indigo */
+    margin-bottom: 20px;
+}
+
+.love-line {
+    font-size: 1.4rem; /* Slightly smaller for a softer feel */
+    color: #3b4369; /* Consistent deep indigo for readability */
+    margin-bottom: 30px;
+    line-height: 1.7;
+    font-weight: 500; /* Medium weight for clarity */
+}
+
+.image-collage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.image-collage img {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 20px; /* Softer image corners */
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.image-collage img:hover {
+    transform: scale(1.04);
+}
+
+.navigation-buttons, .music-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.nav-button, .music-button {
+    background: linear-gradient(45deg, #8998d0, #b2a8d4);
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px; /* Soft pill-shaped buttons */
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 6px 20px rgba(118, 134, 184, 0.4);
+}
+
+.nav-button:hover, .music-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(118, 134, 184, 0.6);
+}
+
+#musicStatus {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #596594;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        font-size: 3rem;
+    }
+    .day-title {
+        font-size: 2.5rem;
+    }
+    .love-line {
+        font-size: 1.2rem;
+    }
+    .image-collage img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .header {
+        font-size: 2.5rem;
+    }
+    .day-title {
+        font-size: 2.2rem;
+    }
+    .love-line {
+        font-size: 1.1rem;
+    }
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-button, .music-button {
+        width: 90%;
+        padding: 15px 20px;
+    }
+}

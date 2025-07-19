@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9 - Birthday Countdown</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/day9.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Birthday Countdown!</h1>
+        <p class="countdown-text">Only 9 days left!</p>
+
+        <div class="day-content">
+            <h2 class="day-title">Day T - 9</h2>
+            <p class="love-line">Nine days left until your birthday, and the wait is feeling to be longer each day. Can't wait to celebrate you! <br> Every adventure in my favourite when I am holding these hands of yours </p>
+            <div class="image-collage">
+                <img src="images/Day9.jpg" alt="Image for Day 9">
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="day10.html" class="nav-button">Previous Day (Day 10)/a>
+            <a href="day8.html" class="nav-button">Next Day (Day 8)</a>
+        </div>
+
+        <div class="music-control">
+            <button id="musicToggleBtn" class="music-button">Play Music</button>
+            <span id="musicStatus" class="text-sm text-gray-600">Music: Paused</span>
+        </div>
+
+        <audio id="backgroundMusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop preload="auto"></audio>
+    </div>
+    <script>
+        const audioPlayer = document.getElementById('backgroundMusic');
+        const musicToggleBtn = document.getElementById('musicToggleBtn');
+        const musicStatusSpan = document.getElementById('musicStatus');
+        let isMusicPlaying = false;
+
+        async function toggleMusic() {
+            if (audioPlayer.paused) {
+                try {
+                    await audioPlayer.play();
+                    musicToggleBtn.textContent = 'Pause Music';
+                    musicStatusSpan.textContent = 'Music: Playing';
+                    isMusicPlaying = true;
+                } catch (error) {
+                    console.error("Error playing music:", error);
+                    musicStatusSpan.textContent = 'Music: Playback blocked (click again)';
+                }
+            } else {
+                audioPlayer.pause();
+                musicToggleBtn.textContent = 'Play Music';
+                musicStatusSpan.textContent = 'Music: Paused';
+                isMusicPlaying = false;
+            }
+        }
+
+        musicToggleBtn.addEventListener('click', toggleMusic);
+    </script>
+</body>
+</html>

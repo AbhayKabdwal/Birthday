@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message For You</title>
+    <!-- Google Fonts: 'Great Vibes' for script, 'Quicksand' for the body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Dreamy Pastel Sky Theme --- */
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); /* Pastel pink to blue gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden; /* Hide overflow from animations */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.6); /* Semi-transparent frosted glass */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 30px; /* Soft, rounded corners */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .heart-container {
+            margin-bottom: 30px;
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+        
+        .heart {
+            color: #ff7a9b; /* Vibrant pink for the heart */
+            font-size: 80px;
+            text-shadow: 0 0 15px #ff7a9b, 0 0 30px #ff7a9b;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .main-message {
+            font-family: 'Great Vibes', cursive; /* Beautiful, flowing script */
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #3b4369; /* Deep, soft indigo */
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        .sub-message {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #6b77a8; /* Muted blue */
+            margin-top: 15px;
+            margin-bottom: 40px;
+        }
+
+        .nav-button {
+            background: linear-gradient(45deg, #8998d0, #b2a8d4);
+            font-family: 'Quicksand', sans-serif;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px; /* Soft pill-shaped buttons */
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 6px 20px rgba(118, 134, 184, 0.4);
+            text-decoration: none;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(118, 134, 184, 0.6);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-message {
+                font-size: 3rem;
+            }
+            .sub-message {
+                font-size: 1.2rem;
+            }
+            .heart {
+                font-size: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .main-message {
+                font-size: 2.5rem;
+            }
+            .sub-message {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heart-container">
+            <div class="heart">❤</div>
+        </div>
+        <h1 class="main-message">This page will be uploaded...</h1>
+        <p class="sub-message">...only if you smile genuinely seeing today's page.❤❤</p>
+        
+        <a href="index.html" class="nav-button">Back to Countdown</a>
+    </div>
+
+</body>
+</html>
