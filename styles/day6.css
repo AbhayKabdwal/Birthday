@@ -1,173 +1,160 @@
-body {
-            font-family: 'Inter', sans-serif;
-            /* Enchanted Garden Theme: Soft greens and gentle purples with a radial gradient */
-            background: radial-gradient(circle at top left, #e6ffe6 0%, #e0f2f7 70%, #f3e5f5 100%); /* Very light green to light blue-green with a hint of lavender */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .container {
-            background-color: #ffffff;
-            border-radius: 35px; /* Significantly more rounded corners */
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18); /* Deeper, softer, more ethereal shadow */
-            padding: 35px; /* Increased padding for a more spacious feel */
-            max-width: 900px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border: 5px solid #FF99CC; /* Loving pink border, thicker for emphasis */
-        }
-        .header {
-            font-family: 'Dancing Script', cursive; /* Elegant, flowing font for the main header */
-            font-size: 3.5rem; /* Larger, more prominent header */
-            font-weight: 700;
-            color: #FF6699; /* Vibrant Rose Pink */
-            margin-bottom: 25px;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* More pronounced, soft text shadow */
-        }
-        .countdown-text {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #CC99FF; /* Soft Lavender Purple */
-            margin-bottom: 25px;
-        }
-        .day-content {
-            background-color: rgba(255, 240, 245, 0.8); /* Very light pink with slight transparency */
-            border-radius: 30px; /* More rounded inner content box */
-            padding: 30px; /* Increased padding */
-            margin-bottom: 35px;
-            box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.1); /* Softer, deeper inner shadow */
-            border: 2px dashed #FFB3D9; /* Dashed border for a softer, whimsical touch */
-        }
-        .day-title {
-            font-family: 'Dancing Script', cursive; /* Consistent elegant font for day title */
-            font-size: 2.8rem; /* Larger day title */
-            font-weight: 700;
-            color: #9966CC; /* Medium Purple */
-            margin-bottom: 20px;
-        }
-        .love-line {
-            font-size: 1.6rem; /* Larger and more prominent love line */
-            font-style: italic;
-            color: #663366; /* Deep Plum for a rich, loving feel */
-            margin-bottom: 30px;
-            line-height: 1.6; /* Increased line height for better readability and a softer look */
-            font-weight: 400; /* Lighter font weight for a gentler feel */
-            text-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow for depth */
-        }
-        .image-collage {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 25px;
-        }
-        .image-collage img {
-            max-width: 100%;
-            height: auto;
-            max-height: 450px; /* Slightly larger image area */
-            object-fit: contain;
-            border-radius: 25px; /* More rounded image corners */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Softer, more pronounced shadow */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 4px solid #FFCCCC; /* Lighter pink border for image */
-        }
-        .image-collage img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-        }
-        .navigation-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 25px; /* More spacing between buttons */
-            margin-top: 40px;
-        }
-        .nav-button {
-            background-color: #FF6699; /* Loving Rose Pink button */
-            color: white;
-            padding: 16px 35px; /* Larger padding for a more substantial button */
-            border-radius: 40px; /* Very rounded, pill-like shape */
-            font-size: 1.3rem; /* Larger text for buttons */
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
-            border: none;
-            box-shadow: 0 6px 15px rgba(255, 102, 153, 0.6); /* Soft glowing shadow */
-        }
-        .nav-button:hover {
-            background-color: #CC99FF; /* Changes to a soft purple on hover */
-            transform: scale(1.05) translateY(-5px); /* More pronounced lift and slight scale */
-            box-shadow: 0 10px 25px rgba(204, 153, 255, 0.8); /* Larger, more diffuse shadow on hover */
-        }
-        .music-control {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-        }
-        .music-button {
-            background-color: #9966CC; /* Medium Purple for music button */
-            color: white;
-            padding: 14px 28px; /* Larger padding */
-            border-radius: 35px; /* More rounded */
-            font-size: 1.2rem; /* Larger font size */
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            border: none;
-            box-shadow: 0 4px 10px rgba(153, 102, 204, 0.4);
-        }
-        .music-button:hover {
-            background-color: #CC99FF; /* Lighter purple on hover */
-            transform: translateY(-1px);
-        }
+/* --- Dreamy Pastel Sky Theme --- */
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .header {
-                font-size: 2.5rem;
-            }
-            .day-title {
-                font-size: 2rem;
-            }
-            .love-line {
-                font-size: 1.3rem;
-            }
-            .image-collage img {
-                max-height: 300px;
-            }
-            .nav-button {
-                padding: 12px 25px;
-                font-size: 1.1rem;
-            }
-            .music-button {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
-        }
-        @media (max-width: 480px) {
-            .header {
-                font-size: 2rem;
-            }
-            .day-title {
-                font-size: 1.7rem;
-            }
-            .love-line {
-                font-size: 1.1rem;
-            }
-            .image-collage img {
-                max-height: 250px;
-            }
-            .navigation-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .nav-button {
-                width: 90%; /* Make buttons full width on small screens */
-            }
-        }
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); /* Pastel pink to blue gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent frosted glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 30px; /* Soft, rounded corners */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+    padding: 35px;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header {
+    font-family: 'Great Vibes', cursive; /* Beautiful, flowing script */
+    font-size: 4rem;
+    font-weight: 400;
+    color: #3b4369; /* Deep, soft indigo */
+    margin-bottom: 20px;
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.8);
+}
+
+.countdown-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #6b77a8; /* Muted blue */
+    margin-bottom: 25px;
+}
+
+.day-content {
+    background-color: rgba(255, 255, 255, 0.5); /* Lighter inner box */
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 35px;
+}
+
+.day-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #596594; /* Slightly lighter indigo */
+    margin-bottom: 20px;
+}
+
+.love-line {
+    font-size: 1.4rem; /* Slightly smaller for a softer feel */
+    color: #3b4369; /* Consistent deep indigo for readability */
+    margin-bottom: 30px;
+    line-height: 1.7;
+    font-weight: 500; /* Medium weight for clarity */
+}
+
+.image-collage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.image-collage img {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 20px; /* Softer image corners */
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.image-collage img:hover {
+    transform: scale(1.04);
+}
+
+.navigation-buttons, .music-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.nav-button, .music-button {
+    background: linear-gradient(45deg, #8998d0, #b2a8d4);
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px; /* Soft pill-shaped buttons */
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 6px 20px rgba(118, 134, 184, 0.4);
+}
+
+.nav-button:hover, .music-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(118, 134, 184, 0.6);
+}
+
+#musicStatus {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #596594;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        font-size: 3rem;
+    }
+    .day-title {
+        font-size: 2.5rem;
+    }
+    .love-line {
+        font-size: 1.2rem;
+    }
+    .image-collage img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .header {
+        font-size: 2.5rem;
+    }
+    .day-title {
+        font-size: 2.2rem;
+    }
+    .love-line {
+        font-size: 1.1rem;
+    }
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-button, .music-button {
+        width: 90%;
+        padding: 15px 20px;
+    }
+}
